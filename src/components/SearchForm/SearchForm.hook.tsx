@@ -6,12 +6,7 @@ import { generationList } from "@/utils/optionList";
 import { pokemonDetailResponse } from "@/interface/pokmeonDetail";
 
 const useSearchForm = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const { register, watch } = useForm();
 
   const { setPokemonList, setfetchPokemonList, fetchPokemon } =
     pokemonListStore();
@@ -55,7 +50,6 @@ const useSearchForm = () => {
         loading: false,
         error: null,
       });
-      
 
       const filterData = filterPokemon(pokeList, keyword, type, sortBy);
 
@@ -110,7 +104,6 @@ const useSearchForm = () => {
     if (generation !== undefined) {
       fetchData(generationList[generation]);
     }
-    
   }, [generation]);
 
   useEffect(() => {

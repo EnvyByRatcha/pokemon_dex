@@ -1,4 +1,4 @@
-import type { pokemonDetailResponse, Type } from "@/interface/pokmeonDetail";
+import type { Type } from "@/interface/pokmeonDetail";
 import { Link } from "react-router";
 
 interface PokemonCardProps {

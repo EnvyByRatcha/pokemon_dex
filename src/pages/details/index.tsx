@@ -49,8 +49,6 @@ export default function DetailPage() {
           }
         };
 
-        console.log(maxStat());
-
         setPokemon({
           data: {
             ...res.data,
@@ -120,7 +118,7 @@ export default function DetailPage() {
                 return (
                   <li key={index}>
                     <button
-                      onClick={(e) => setActive(index)}
+                      onClick={() => setActive(index)}
                       className={`${
                         active === index
                           ? "text-white border-white"
@@ -161,7 +159,10 @@ export default function DetailPage() {
                   <div className="space-y-2">
                     {pokemon.data?.abilities.map((abi) => {
                       return (
-                        <div className="capitalize bg-[#0E61A7] bg-opacity-30 p-2 rounded-lg text-center" key={abi.ability.name}>
+                        <div
+                          className="capitalize bg-[#0E61A7] bg-opacity-30 p-2 rounded-lg text-center"
+                          key={abi.ability.name}
+                        >
                           {abi.ability.name}
                         </div>
                       );
